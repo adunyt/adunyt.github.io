@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>BTD</title>
+</head>
+<body>
+    <header>
+        <div class="logo-n-text">
+            <!-- <img src="img/logo.png" alt="logo" class="logo-img"> -->
+            <a class="logo-text" href="/index.html">BTD</a>
+        </div>
+        <form class="search">
+            <input type="text" id="search-input" placeholder="KCAS 1000W">
+            <button id="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </button>
+        </form>
+        <div class="buttons">
+            <button class="header-btn card">
+                <p>Корзина</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+            </button>
+            <button class="header-btn login">
+                <p>Войти</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div id="main-content">
+        <div class="catalog">
+            <h2>Каталог</h2>
+            <ul class="catalog-items">
+                <li class="catalog-item"><a href="/catalog.html?c=Блоки питания">Блоки питания</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Корпуса">Корпуса</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Процессоры">Процессы</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Жесткие диски">Жесткие диски</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Видеокарты">Видеокарты</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Материнские игры">Материнские платы</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Мониторы">Мониторы</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Ноутбуки">Ноутбуки</a></li>
+                <li class="catalog-item"><a href="/catalog.html?c=Готовые блоки">Готовые блоки</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="sales">
+                <img src="img/бесплатно.png" alt="">
+            </div>
+            <h3 class="suggest-title">Предложения</h3>
+            <div class="suggest">
+                <div class="suggest-item">
+                    <img src="img/kcas-plus-1000m-1.webp" alt="">
+                    <p class="suggest-product-name">Блок питания KCAS 1000W</p>
+                    <div class="suggest-product-buy">
+                        <p class="suggest-product-price">10000 р.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="suggest-item">
+                    <img src="img/th-27444906.jpg" alt="">
+                    <p class="suggest-product-name">Игровой монитор 100ГЦ</p>
+                    <div class="suggest-product-buy">
+                        <p class="suggest-product-price">5000 р.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="suggest-item">
+                    <img src="img/intel-core-i5-9600k.jpg" alt="">
+                    <p class="suggest-product-name">Intel i5 9600k</p>
+                    <div class="suggest-product-buy">
+                        <p class="suggest-product-price">20000 р.</p>
+                        <button class="add-to-cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>2022 Денис Вагнер</p>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
