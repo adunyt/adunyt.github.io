@@ -49,13 +49,43 @@
         </div>
     </header>
     <div id="main-content">
-        <div class="content fill-empty">
+        <div class="content">
+            <h1>Корзина</h1>
+            <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+            <form class="cart" action="/api/checkout"> 
+                <!-- TODO: сделать checkout и сам checkout.html -->
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <input type="checkbox" name="" id="" class="cart-item-checkbox">
+                        <div class="flex-row">
+                            <img src="img/box.jpg" alt="" class="cart-image">
+                            <p class="cart-name">Product title</p>
+                        </div>
+                        <div class="flex-row buy-n-price">
+                            <div class="change-product-value small">
+                                <button class="minus-product">-</button>
+                                <p>1</p>
+                                <button class="plus-product">+</button>
+                            </div>
+                            <p class="cart-item-price">xxxx p.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="to-checkout">
+                    <p>Итог:</p>
+                    <div class="flex-row cart-total">
+                        <p><span>999</span> товаров</p>
+                        <p>xxx p.</p>
+                    </div>
+                    <input type="submit" class="cart-buy" value="Купить">
+                </div>
 
+                
+            </form>
         </div>
     </div>
     <footer>
         <p>BTD © Copyright. All rights reserved.</p>
     </footer>
 </body>
-
 </html>

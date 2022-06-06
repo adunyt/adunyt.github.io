@@ -49,8 +49,18 @@
         </div>
     </header>
     <div id="main-content">
-        <div class="content fill-empty">
-
+        <div class="content flex-center">
+            <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+            <div class="login">
+                <form action="/api/login" method="post" class="login-form" target="dummyframe">
+                    <label for="">Логин</label>
+                    <input type="text" name="" id="login">
+                    <label for="">Пароль</label>
+                    <input type="password" name="" id="password">
+                    <input type="submit" value="Войти" class="login-btn">
+                    <a href="/register.html" class="reg-btn">Зарегистрироваться</a>
+                </form>
+            </div>
         </div>
 
     </div>
@@ -58,5 +68,4 @@
         <p>BTD © Copyright. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
