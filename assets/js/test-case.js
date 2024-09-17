@@ -143,7 +143,7 @@ function getFilenameFromUrl(url) {
 
 function setText(text) {
     const element = document.querySelector("#output-textarea");
-    element.textContent = text;
+    element.value = text;
 }
 
 function updateAuthData() {
@@ -151,17 +151,27 @@ function updateAuthData() {
     greenApi.setApiTokenInstance(apiTokenInstanceInput.value);
 }
 
+let currentAlertTimeout = undefined;
+
 function showAlert(text = "Возникла непредвиденная ошибка!") {
+    if (currentAlertTimeout) {
+        clearTimeout(currentAlertTimeout);
+        currentAlertTimeout = undefined;
+    }
     alertTextElement.textContent = text;
     alertElement.classList.add("show");
+    currentAlertTimeout = setTimeout(() => {
+        hideAlert();
+    }, 6000);
 }
 
 function hideAlert() {
+    currentAlertTimeout = undefined;
     alertElement.classList.remove("show");
 }
 
-const alertElement = document.querySelector("#alert")
-const alertTextElement = document.querySelector("#alert-message-text")
+const alertElement = document.querySelector("#alert");
+const alertTextElement = document.querySelector("#alert-message-text");
 
 const idInstanceInput = document.querySelector("#idInstance-input");
 const apiTokenInstanceInput = document.querySelector("#apiTokenInstance-input");
@@ -217,7 +227,7 @@ document.querySelector("#sendMessage-btn").addEventListener("click", async () =>
 
 document.querySelector("#sendFileByUrl-btn").addEventListener("click", async () => {
     const userId = sendFileByUrlUserIdInput.value;
-    const fileUrl = sendFileByUrlFileUrlInput.value
+    const fileUrl = sendFileByUrlFileUrlInput.value;
     const filename = getFilenameFromUrl(fileUrl);
 
     try {
