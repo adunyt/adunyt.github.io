@@ -25,13 +25,13 @@ class GreenApi {
         this.apiTokenInstance = apiTokenInstance;
     }
 
-    __urlBuilder(methodName){
+    __urlBuilder(methodName) {
         const url = `${this.apiUrl}/waInstance${this.idInstance}/${methodName}/${this.apiTokenInstance}`;
         return url;
     }
 
     // Ref: https://green-api.com/docs/api/account/GetSettings/
-    async getSettings(){
+    async getSettings() {
         const url = this.__urlBuilder("getSettings");
         try {
             const response = await fetch(url);
@@ -41,11 +41,11 @@ class GreenApi {
             return await response.json();
         } catch (error) {
             throw error;
-        }        
+        }
     }
 
     // Ref: https://green-api.com/docs/api/account/GetStateInstance/
-    async getStateInstance(){
+    async getStateInstance() {
         const url = this.__urlBuilder("getStateInstance");
 
         try {
@@ -56,11 +56,11 @@ class GreenApi {
             return await response.json();
         } catch (error) {
             throw error;
-        }   
+        }
     }
 
     // Ref: https://green-api.com/docs/api/sending/SendMessage/
-    async sendMessage(chatId, message, quotedMessageId, linkPreview){
+    async sendMessage(chatId, message, quotedMessageId, linkPreview) {
         const url = this.__urlBuilder("sendMessage");
         // TODO: add removing unnecessary payload
 
@@ -77,8 +77,7 @@ class GreenApi {
 
         try {
             const response = await fetch(
-                url, 
-                {
+                url, {
                     method: 'POST',
                     headers: headers,
                     body: JSON.stringify(payload)
@@ -93,9 +92,9 @@ class GreenApi {
     }
 
     // Ref: https://green-api.com/docs/api/sending/SendFileByUrl/
-    async sendFileByUrl(chatId, urlFile, fileName, caption, quotedMessageId){
+    async sendFileByUrl(chatId, urlFile, fileName, caption, quotedMessageId) {
         const url = this.__urlBuilder("sendFileByUrl");
-        
+
         // TODO: add filename extraction if no fileName provided from urlFile
         // TODO: add removing unnecessary payload
 
@@ -106,15 +105,14 @@ class GreenApi {
             caption: caption,
             quotedMessageId: quotedMessageId
         };
-        
+
         const headers = {
             'Content-Type': 'application/json'
         };
 
         try {
             const response = await fetch(
-                url, 
-                {
+                url, {
                     method: 'POST',
                     headers: headers,
                     body: JSON.stringify(payload)
@@ -127,40 +125,39 @@ class GreenApi {
             throw error;
         }
     }
-    
+
 }
 
 function getFilenameFromUrl(url) {
     const urlObj = new URL(url);
     const pathname = urlObj.pathname;
-    
+
     const filename = pathname.substring(pathname.lastIndexOf('/') + 1);
 
     if (!filename) {
         return 'download';
     }
-    
+
     return filename;
 }
 
-function setText(text){
+function setText(text) {
     const element = document.querySelector("#output-textarea");
     element.textContent = text;
 }
 
-function updateAuthData(){
+function updateAuthData() {
     greenApi.setIdInstance(idInstanceInput.value);
     greenApi.setApiTokenInstance(apiTokenInstanceInput.value);
 }
 
-function showAlert(text = "Возникла непредвиденная ошибка!"){
-    hideAlert();
+function showAlert(text = "Возникла непредвиденная ошибка!") {
     alertTextElement.textContent = text;
-    alertElement.classList.remove("d-none");
+    alertElement.classList.add("show");
 }
 
-function hideAlert(){
-    alertElement.classList.add("d-none");
+function hideAlert() {
+    alertElement.classList.remove("show");
 }
 
 const alertElement = document.querySelector("#alert")
@@ -182,6 +179,10 @@ const greenApi = new GreenApi();
 greenApi.setApiUrl(apiUrl);
 greenApi.setMediaUrl(mediaUrl);
 
+document.querySelector("#alert-btn").addEventListener("click", async () => {
+    hideAlert();
+});
+
 document.querySelector("#getSettings-btn").addEventListener("click", async () => {
     updateAuthData();
     try {
@@ -193,17 +194,25 @@ document.querySelector("#getSettings-btn").addEventListener("click", async () =>
 });
 
 document.querySelector("#getStateInstance-btn").addEventListener("click", async () => {
-    updateAuthData();
-    const response = await greenApi.getStateInstance();
-    setText(JSON.stringify(response, null, 2));
+    try {
+        updateAuthData();
+        const response = await greenApi.getStateInstance();
+        setText(JSON.stringify(response, null, 2));
+    } catch (error) {
+        showAlert(error.toString());
+    }
 });
 
-document.querySelector("#sendMessage-btn").addEventListener("click", async () => { 
+document.querySelector("#sendMessage-btn").addEventListener("click", async () => {
     const userId = sendMessageUserIdInput.value;
     const message = sendMessageMessageInput.value;
-    updateAuthData();
-    const response = await greenApi.sendMessage(userId, message);
-    setText(JSON.stringify(response, null, 2));
+    try {
+        updateAuthData();
+        const response = await greenApi.sendMessage(userId, message);
+        setText(JSON.stringify(response, null, 2));
+    } catch (error) {
+        showAlert(error.toString());
+    }
 });
 
 document.querySelector("#sendFileByUrl-btn").addEventListener("click", async () => {
@@ -211,7 +220,11 @@ document.querySelector("#sendFileByUrl-btn").addEventListener("click", async () 
     const fileUrl = sendFileByUrlFileUrlInput.value
     const filename = getFilenameFromUrl(fileUrl);
 
-    updateAuthData();
-    const response = await greenApi.sendFileByUrl(userId, fileUrl, filename);
-    setText(JSON.stringify(response, null, 2));
+    try {
+        updateAuthData();
+        const response = await greenApi.sendFileByUrl(userId, fileUrl, filename);
+        setText(JSON.stringify(response, null, 2));
+    } catch (error) {
+        showAlert(error.toString());
+    }
 });
