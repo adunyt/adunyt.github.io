@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>adunyt toolbox</title>
-    <meta name="description" content="Сборник небольших сайтов шпаргалок на разные случаи жизни">
+    <title>Мои проекты</title>
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Сайты на разные случаи жизни">
+    <meta name="description" content="Сборник сделанных проектов и участий в конкурсе">
+    <meta property="og:description" content="Сборник сделанных проектов и участий в конкурсе">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -23,10 +23,9 @@
     <link rel="icon" type="image/png" sizes="180x180" href="assets/img/adunyt-ios-favicon.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/img/adunyt-android-large.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand.css">
     <link rel="stylesheet" href="assets/css/Projects-Grid-images.css">
+    <link rel="stylesheet" href="assets/css/resume.css">
 <meta name="color-scheme" content="light dark">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#111111" media="(prefers-color-scheme: light)">
@@ -35,55 +34,139 @@
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark py-3 navbar-dark">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-code-slash">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="toolbox.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-code-slash">
                         <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"></path>
                     </svg></span><span>adunyt</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-5">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="translator.html">Переводчик</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="liquid-calc.html">Калькулятор</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="resume.html">Резюме <strong>NEW!</strong></a></li>
-                    <li class="nav-item"><a class="nav-link disabled" href="#">Пицца или нет</a></li>
-                </ul><a class="btn btn-primary text-start d-xl-flex d-xxl-flex justify-content-between align-items-xl-center justify-content-xxl-center align-items-xxl-center ms-md-2" role="button" href="https://github.com/adunyt?tab=repositories"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github fs-4 text-start" style="margin-right: 5px;margin-left: 0px;">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Мои проекты</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="toolbox.html">Утилиты</a></li>
+                </ul><a class="btn btn-primary text-start d-xl-flex d-xxl-flex justify-content-between align-items-xl-center justify-content-xxl-center align-items-xxl-center ms-md-2" role="button" href="https://github.com/adunyt?tab=repositories"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github fs-4 text-start" style="margin-left: 0px;margin-right: 5px;">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                     </svg>Github</a>
             </div>
         </div>
     </nav>
-    <div class="container py-4 py-xl-5">
+    <div class="container">
         <div class="row">
-            <div class="col-md-8 col-xl-6 mx-auto p-4">
-                <div class="d-flex align-items-center align-items-md-start align-items-xl-center">
-                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon xl"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-paint-bucket">
-                            <path d="M6.192 2.78c-.458-.677-.927-1.248-1.35-1.643a2.972 2.972 0 0 0-.71-.515c-.217-.104-.56-.205-.882-.02-.367.213-.427.63-.43.896-.003.304.064.664.173 1.044.196.687.556 1.528 1.035 2.402L.752 8.22c-.277.277-.269.656-.218.918.055.283.187.593.36.903.348.627.92 1.361 1.626 2.068.707.707 1.441 1.278 2.068 1.626.31.173.62.305.903.36.262.05.64.059.918-.218l5.615-5.615c.118.257.092.512.05.939-.03.292-.068.665-.073 1.176v.123h.003a1 1 0 0 0 1.993 0H14v-.057a1.01 1.01 0 0 0-.004-.117c-.055-1.25-.7-2.738-1.86-3.494a4.322 4.322 0 0 0-.211-.434c-.349-.626-.92-1.36-1.627-2.067-.707-.707-1.441-1.279-2.068-1.627-.31-.172-.62-.304-.903-.36-.262-.05-.64-.058-.918.219l-.217.216zM4.16 1.867c.381.356.844.922 1.311 1.632l-.704.705c-.382-.727-.66-1.402-.813-1.938a3.283 3.283 0 0 1-.131-.673c.091.061.204.15.337.274zm.394 3.965c.54.852 1.107 1.567 1.607 2.033a.5.5 0 1 0 .682-.732c-.453-.422-1.017-1.136-1.564-2.027l1.088-1.088c.054.12.115.243.183.365.349.627.92 1.361 1.627 2.068.706.707 1.44 1.278 2.068 1.626.122.068.244.13.365.183l-4.861 4.862a.571.571 0 0 1-.068-.01c-.137-.027-.342-.104-.608-.252-.524-.292-1.186-.8-1.846-1.46-.66-.66-1.168-1.32-1.46-1.846-.147-.265-.225-.47-.251-.607a.573.573 0 0 1-.01-.068l3.048-3.047zm2.87-1.935a2.44 2.44 0 0 1-.241-.561c.135.033.324.11.562.241.524.292 1.186.8 1.846 1.46.45.45.83.901 1.118 1.31a3.497 3.497 0 0 0-1.066.091 11.27 11.27 0 0 1-.76-.694c-.66-.66-1.167-1.322-1.458-1.847z"></path>
-                        </svg></div>
-                    <div>
-                        <h4>Калькулятор для жидких обоев</h4>
-                        <p>Поможет вам посчитать правильное количество упаковок и килограмм жидких обоев</p><a href="liquid-calc.html">Посчитать&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg></a>
+            <div class="col-md-6 d-xl-flex align-self-center justify-content-xl-start align-items-xl-center" style="padding: 20px;"><img class="rounded-circle d-xl-flex" style="width: 128px;height: 128px;margin: 0;overflow: hidden;position: relative;transform: rotate(0deg);backdrop-filter: blur(0px);margin-right: 10px;" src="assets/img/profile-icon.jpg" loading="auto">
+                <div style="margin: 0;margin-left: 10px;">
+                    <h2 class="text-start" style="margin: 0px;">Викторов Денис</h2>
+                    <h5 class="text-start" style="margin: 0px;opacity: 0.50;">Программист</h5>
+                </div>
+            </div>
+            <div class="col-md-6 d-xl-flex justify-content-xl-end" style="padding: 20px;">
+                <div class="d-xl-flex flex-column justify-content-xl-center align-items-xl-start">
+                    <div class="fs-5 d-xl-flex justify-content-xl-start align-items-xl-center" style="margin: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-telegram" style="margin: 0;margin-right: 10px;">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"></path>
+                        </svg><a class="d-xl-flex align-content-center justify-content-xl-center align-items-xl-center" href="https://t.me/victorovdv" target="_blank">@victorovdv</a></div>
+                    <div class="fs-5 d-xl-flex justify-content-xl-end align-items-xl-center" style="margin: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-whatsapp" style="margin: 0;margin-right: 10PX;">
+                            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+                        </svg><a class="text-center d-xl-flex align-content-center justify-content-xl-center align-items-xl-center" href="https://wa.me/79253411834" target="_blank">79253411834</a></div>
+                    <div class="fs-5 d-xl-flex justify-content-xl-end align-items-xl-center" style="margin: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-envelope" style="margin: 0;margin-right: 10PX;">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
+                        </svg><a class="text-center d-xl-flex align-content-center justify-content-xl-center align-items-xl-center" href="mailto://adunyt@gmail.com" target="_blank">adunyt+fromsite@gmail.com</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2>Мои проекты</h2>
+                <p class="w-lg-50">Различные проекты. Некоторые делал один, некоторые в команде. <strong>Кликните по ссылке,</strong>&nbsp;чтобы перейти в репозиторий</p>
+            </div>
+        </div>
+        <div class="row row-cols-md-2 row-cols-xl-3 d-md-flex justify-content-center align-items-start">
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/mycollege.jpg">
+                    <div class="py-4">
+                        <h4>MyCollege</h4>
+                        <p>Приложение для отображение расписания. Расписание парсится с нуля из pdf файла. На данный момент в архиве.&nbsp;</p>
+                        <div class="bages-div"><span class="badge bg-primary">Python 3</span><span class="badge bg-primary">Camelot-py</span><span class="badge bg-primary">KivyMD</span></div><a class="repo-link" href="https://github.com/adunyt/mycollege">Посмотреть расписание &gt;</a>
                     </div>
                 </div>
-                <hr class="my-5">
-                <div class="d-flex align-items-center align-items-md-start align-items-xl-center">
-                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center order-last ms-4 d-inline-block bs-icon xl"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-keyboard-fill">
-                            <path d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z"></path>
-                        </svg></div>
-                    <div>
-                        <h4>Переводчик неправильной раскладки</h4>
-                        <p>Ваш друг написал вам эссе, но забыл переключить раскладку на клавиатуре? Данный переводчик поможет вам понять, что же ваш друг хотел вам сказать</p><a href="translator.html"><br><span style="color: rgb(10, 88, 202);">Gthtdtcnb&nbsp;</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg></a>
+            </div>
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;filter: grayscale(100%);" src="assets/img/mycollege.jpg">
+                    <div class="py-4">
+                        <h4>MyCollege (Telegram BOT)</h4>
+                        <p>Дополнение к приложению MyCollege в виде телеграмм бота реализованного с помощью Aiogram 2</p>
+                        <div class="bages-div"><span class="badge bg-primary">Python 3</span><span class="badge bg-primary">Camelot-py</span><span class="badge bg-primary">Aiogram 2</span></div>
                     </div>
                 </div>
-                <hr class="my-5">
-                <div class="d-flex align-items-center align-items-md-start align-items-xl-center">
-                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon xl"><i class="fas fa-pizza-slice"></i></div>
-                    <div>
-                        <h4>Выгодная ли пицца?</h4>
-                        <p>Вы как всегда заходите в субботу в пиццерию, заказывая 2 средних пиццы. Но к вам подходит официант и предлагает 3 маленьких за ту же цену. Выгодное ли это предложения, или же вас хотят обмануть?</p><a href="#" class="disabled">Узнать&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg></a>
+            </div>
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/boorubot.png">
+                    <div class="py-4">
+                        <h4>BooruBot</h4>
+                        <p>Телеграм бот, задачей которого является поиск и выдача изображений с imageboard, и отправка их пользователю. Либо в заранее настроенный канал&nbsp; &nbsp;</p>
+                        <div class="bages-div"><span class="badge bg-primary">C#</span><span class="badge bg-primary">NLog</span><span class="badge bg-primary">BooruSharp</span><span class="badge bg-primary">Telegram.Bot</span></div><a class="repo-link" href="https://github.com/adunyt/BooruBot">Поискать изображения &gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/djadis.png">
+                    <div class="py-4">
+                        <h4>Калькулятор недвижимости</h4>
+                        <p>🧮 Калькулятор цены недвижимости на основе алгоритмов машинного обучения. <br>✈️ Был сделан в рамках интенсивного обучения по ML от компании "Самолет". <br>👥 Сделан усилиями команды из 6 человек&nbsp;<br>📦Представляет из себя 3 части - модель, backend, frontend.&nbsp;</p>
+                        <div class="bages-div"><span class="badge bg-primary">iPython</span><span class="badge bg-primary">Catboost</span><span class="badge bg-primary">Pandas</span><span class="badge bg-primary">Flask</span><span class="badge bg-primary">HTML + CSS</span><span class="badge bg-primary">JS</span></div><a class="repo-link" href="https://github.com/adunyt/ml-intensiv-web">Рассчитать цену на квартиру &gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/quiz-bot.png">
+                    <div class="py-4">
+                        <h4>Система тестирования студентов (Telegram BOT)</h4>
+                        <p>📝 Часть системы тестирования разработанной на хакатоне от компании "Клауд КОМ"<br>🌐 Берет данные из удаленного источника, после чего проводит тестирование пользователя<br>🐋 Упакован в образ Docker</p>
+                        <div class="bages-div"><span class="badge bg-primary">Python</span><span class="badge bg-primary">Aiogram 3</span><span class="badge bg-primary">Telegram Bot API</span><span class="badge bg-primary">Docker</span></div><a class="repo-link" href="https://github.com/adunyt/testing_bot/">Протестировать пользователей -&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2>Конкурсы</h2>
+            </div>
+        </div>
+        <div class="row row-cols-3 d-xl-flex justify-content-center align-items-start justify-content-xl-center align-items-xl-start">
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/worldskills-project1.png">
+                    <div class="py-4">
+                        <h4>WorldSkills Russia 2021</h4>
+                        <p>Компетенция: "Разработка приложений виртуальной и дополненной реальности"<br>Условия: За 16 часов (по 8 часов на проект) нужно разработать 2 игры: VR и AR по выданному ТЗ<br>Ограничения: Нет полного доступа к интернету и готовым ресурсам</p>
+                        <p class="fw-bold">Тема: VR - "Симулятор погрузчика", AR - "Древнее аэротакси"</p>
+                        <div class="bages-div"><span class="badge bg-primary">C#</span><span class="badge bg-primary">Unity</span><span class="badge bg-primary">Blender</span><span class="badge bg-primary">VR</span><span class="badge bg-primary">AR</span></div><span class="badge bg-warning fs-6" style="margin-top: 10px;">🏅 3 место</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/worldskills-project2.jpg">
+                    <div class="py-4">
+                        <h4>Чемпионат по профессиональному мастерству «Профессионалы» 2023</h4>
+                        <p>Аналогичен по условиям с WorldSkills</p>
+                        <p class="fw-bold">Тема: VR - "Бильярд", AR - "Симулятор автомеханика"</p>
+                        <div class="bages-div"><span class="badge bg-primary">C#</span><span class="badge bg-primary">Unity</span><span class="badge bg-primary">Blender</span><span class="badge bg-primary">VR</span><span class="badge bg-primary">AR</span></div><span class="badge bg-warning fs-6" style="margin-top: 10px;">🏅 3 место</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2>Образование</h2>
+            </div>
+        </div>
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-md-flex justify-content-center">
+            <div class="col">
+                <div><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/college.jpg">
+                    <div class="py-4">
+                        <h4>Красногорский колледж</h4>
+                        <p>Специальность: Информационные системы и программирование<br>Год выпуска: 2024</p>
+                        <div class="bages-div"><span class="badge bg-primary">Системное администрирование</span><span class="badge bg-primary">Программирование</span><span class="badge bg-primary">C#</span><span class="badge bg-primary">Курсы от Академии Cisco</span></div><a class="repo-link" href="http://www.krstc.ru/">Сайт колледжа -&gt;</a>
                     </div>
                 </div>
             </div>
