@@ -26,106 +26,49 @@ class GreenApi {
     }
 
     __urlBuilder(methodName) {
-        const url = `${this.apiUrl}/waInstance${this.idInstance}/${methodName}/${this.apiTokenInstance}`;
-        return url;
+        return `${this.apiUrl}/waInstance${this.idInstance}/${methodName}/${this.apiTokenInstance}`;
     }
 
-    // Ref: https://green-api.com/docs/api/account/GetSettings/
-    async getSettings() {
+    async request(url, method = 'GET', payload = null) {
+        const options = {
+            method,
+            headers: { 'Content-Type': 'application/json' },
+        };
+        if (payload) options.body = JSON.stringify(payload);
+
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                throw new Error(`Request error. ${response.status}: ${response.statusText}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(`API Request Error: ${error.message}`);
+            throw error;
+        }
+    }
+
+    getSettings() {
         const url = this.__urlBuilder("getSettings");
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
-            }
-            return await response.json();
-        } catch (error) {
-            throw error;
-        }
+        return this.request(url);
     }
 
-    // Ref: https://green-api.com/docs/api/account/GetStateInstance/
-    async getStateInstance() {
+    getStateInstance() {
         const url = this.__urlBuilder("getStateInstance");
-
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
-            }
-            return await response.json();
-        } catch (error) {
-            throw error;
-        }
+        return this.request(url);
     }
 
-    // Ref: https://green-api.com/docs/api/sending/SendMessage/
-    async sendMessage(chatId, message, quotedMessageId, linkPreview) {
+    sendMessage(chatId, message, quotedMessageId = null, linkPreview = false) {
         const url = this.__urlBuilder("sendMessage");
-        // TODO: add removing unnecessary payload
-
-        const payload = {
-            chatId: chatId,
-            message: message,
-            quotedMessageId: quotedMessageId,
-            linkPreview: linkPreview
-        };
-
-        const headers = {
-            'Content-Type': 'application/json'
-        };
-
-        try {
-            const response = await fetch(
-                url, {
-                    method: 'POST',
-                    headers: headers,
-                    body: JSON.stringify(payload)
-                });
-            if (!response.ok) {
-                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
-            }
-            return await response.json();
-        } catch (error) {
-            throw error;
-        }
+        const payload = { chatId, message, quotedMessageId, linkPreview };
+        return this.request(url, 'POST', payload);
     }
 
-    // Ref: https://green-api.com/docs/api/sending/SendFileByUrl/
-    async sendFileByUrl(chatId, urlFile, fileName, caption, quotedMessageId) {
+    sendFileByUrl(chatId, urlFile, fileName, caption = '', quotedMessageId = null) {
         const url = this.__urlBuilder("sendFileByUrl");
-
-        // TODO: add filename extraction if no fileName provided from urlFile
-        // TODO: add removing unnecessary payload
-
-        const payload = {
-            chatId: chatId,
-            urlFile: urlFile,
-            fileName: fileName,
-            caption: caption,
-            quotedMessageId: quotedMessageId
-        };
-
-        const headers = {
-            'Content-Type': 'application/json'
-        };
-
-        try {
-            const response = await fetch(
-                url, {
-                    method: 'POST',
-                    headers: headers,
-                    body: JSON.stringify(payload)
-                });
-            if (!response.ok) {
-                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
-            }
-            return await response.json();
-        } catch (error) {
-            throw error;
-        }
+        const payload = { chatId, urlFile, fileName, caption, quotedMessageId };
+        return this.request(url, 'POST', payload);
     }
-
 }
 
 function getFilenameFromUrl(url) {
