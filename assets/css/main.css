@@ -1,6 +1,0 @@
-a.disabled {
-  color: var(--bs-secondary);
-  pointer-events: none;
-  text-decoration: none;
-}
-
