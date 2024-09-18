@@ -36,7 +36,7 @@ class GreenApi {
         try {
             const response = await fetch(url);
             if (!response.ok) {
-                throw new Error(`Error ${response.status}: ${response.statusText}`);
+                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
             }
             return await response.json();
         } catch (error) {
@@ -51,7 +51,7 @@ class GreenApi {
         try {
             const response = await fetch(url);
             if (!response.ok) {
-                throw new Error(`Error ${response.status}: ${response.statusText}`);
+                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
             }
             return await response.json();
         } catch (error) {
@@ -83,7 +83,7 @@ class GreenApi {
                     body: JSON.stringify(payload)
                 });
             if (!response.ok) {
-                throw new Error(`Error ${response.status}: ${response.statusText}`);
+                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
             }
             return await response.json();
         } catch (error) {
@@ -118,7 +118,7 @@ class GreenApi {
                     body: JSON.stringify(payload)
                 });
             if (!response.ok) {
-                throw new Error(`Error ${response.status}: ${response.statusText}`);
+                throw new Error(`Ошибка запроса. ${response.status}: ${response.statusText}`);
             }
             return await response.json();
         } catch (error) {
@@ -147,8 +147,76 @@ function setText(text) {
 }
 
 function updateAuthData() {
+    if (!isIdInstanceInputValid() || !isApiTokenInstanceInputValid()){
+        throw new Error("Проверьте данные авторизации");
+    }
     greenApi.setIdInstance(idInstanceInput.value);
     greenApi.setApiTokenInstance(apiTokenInstanceInput.value);
+}
+
+function isValidUrl(string) {
+    try {
+      new URL(string);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
+function isIdInstanceInputValid(){
+    if (idInstanceInput.value.trim() === ''){
+        idInstanceInput.classList.add("is-invalid");
+        return false;
+    }
+    idInstanceInput.classList.remove("is-invalid");
+    return true;
+}
+
+function isApiTokenInstanceInputValid(){
+    if (apiTokenInstanceInput.value.trim() === ''){
+        apiTokenInstanceInput.classList.add("is-invalid");
+        return false;
+    }
+    apiTokenInstanceInput.classList.remove("is-invalid");
+    return true;
+}
+
+function isSendMessageInputsValid(){
+    let isValid = true;
+    if (sendMessageMessageInput.value.trim() === ''){
+        sendMessageMessageInput.classList.add("is-invalid");
+        isValid = false;
+    }
+    else{
+        sendMessageMessageInput.classList.remove("is-invalid");
+    }
+    if (sendMessageUserIdInput.value.trim() === ''){
+        sendMessageUserIdInput.classList.add("is-invalid");
+        isValid = false;
+    }
+    else{
+        sendMessageUserIdInput.classList.remove("is-invalid");
+    }
+    return isValid;
+}
+
+function isSendFileInputsValid(){
+    let isValid = true;
+    if (!isValidUrl(sendFileByUrlFileUrlInput.value)){
+        sendFileByUrlFileUrlInput.classList.add("is-invalid");
+        isValid = false;
+    }
+    else{
+        sendFileByUrlFileUrlInput.classList.remove("is-invalid");
+    }
+    if (sendFileByUrlUserIdInput.value.trim() === ''){
+        sendFileByUrlUserIdInput.classList.add("is-invalid");
+        isValid = false;
+    }
+    else{
+        sendFileByUrlUserIdInput.classList.remove("is-invalid");
+    }
+    return isValid;
 }
 
 let currentAlertTimeout = undefined;
@@ -194,8 +262,8 @@ document.querySelector("#alert-btn").addEventListener("click", async () => {
 });
 
 document.querySelector("#getSettings-btn").addEventListener("click", async () => {
-    updateAuthData();
     try {
+        updateAuthData();
         const response = await greenApi.getSettings();
         setText(JSON.stringify(response, null, 2));
     } catch (error) {
@@ -214,8 +282,13 @@ document.querySelector("#getStateInstance-btn").addEventListener("click", async 
 });
 
 document.querySelector("#sendMessage-btn").addEventListener("click", async () => {
+    if (!isSendMessageInputsValid()){
+        return;
+    }
+
     const userId = sendMessageUserIdInput.value;
     const message = sendMessageMessageInput.value;
+    
     try {
         updateAuthData();
         const response = await greenApi.sendMessage(userId, message);
@@ -226,6 +299,10 @@ document.querySelector("#sendMessage-btn").addEventListener("click", async () =>
 });
 
 document.querySelector("#sendFileByUrl-btn").addEventListener("click", async () => {
+    if (!isSendFileInputsValid()){
+        return;
+    }
+
     const userId = sendFileByUrlUserIdInput.value;
     const fileUrl = sendFileByUrlFileUrlInput.value;
     const filename = getFilenameFromUrl(fileUrl);
