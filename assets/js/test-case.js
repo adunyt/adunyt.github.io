@@ -294,8 +294,8 @@ class UiHandler {
 
 
 // Инициализация класса работы GreenAPI
-const apiUrl = "https://1103.api.green-api.com";
-const mediaUrl = "https://1103.media.green-api.com";
+const apiUrl = "https://api.green-api.com";
+const mediaUrl = "https://media.green-api.com";
 const greenApi = new GreenApi(apiUrl, mediaUrl);
 
 // Инициализация класса обработчика UI
